@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/@petfinder/petfinder-js/dist/petfinder.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+          integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.js"></script>
+    <script src="code.js"></script>
+    <link rel="stylesheet" href="secondary.css">
+
+</head>
+<body>
+<div class="home">
+
+    <div class="header">
+        <div class="homeclick">
+            <h1>Buddies n' Pals</h1>
+            <h2>Animal Adoption Center</h2>
+        </div>
+    </div>
+
+    <main>
+        <div class="content">
+            <button class="meetButton">Meet</button>
+            <img src="pexels-burst-374906.jpg">
+        </div>
+    </main>
+    <footer>
+        <button type="button" class="quizButton">Take the Quiz!</button>
+    </footer>
+</div>
+
+
+<div class="meet">
+    <div class="header">
+        <h1>Buddies n' Pals</h1>
+        <h2>Animal Adoption Center</h2>
+        <button type="button" class="quizButton">Take the Quiz!</button>
+    </div>
+
+    <main>
+        <table id="myTable">
+
+        </table>
+    </main>
+
+</div>
+
+<div class="adopt">
+        <div class="header">
+        <h1>Buddies n' Pals</h1>
+        <h2>Animal Adoption Center</h2>
+        </div>
+
+        <main>
+        <div class="animalName"></div>
+
+            <div class="formWrapper">
+
+
+                <form id="adoptForm" name="adoptForm">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="firstName">First</label>
+                            <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputLastName">Last</label>
+                            <input type="text" class="form-control" id="inputLastName" name="lastName"placeholder="Last Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPhone">Phone</label>
+                        <input type="tel" class="form-control" id="inputPhone" name="phone" placeholder="555-555-5555">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail">Email</label>
+                        <input type="text" class="form-control" id="inputEmail" name="email" placeholder="username@email.com">
+                    </div>
+                    How would you like us to send your appointment times?<br><br>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="appointmentRadio" id="inputTextContact"
+                               value="Text(SMS)">
+                        <label class="form-check-label" for="inputTextContact">Text(SMS)</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="appointmentRadio" id="inputEmailContact" checked
+                               value="Email">
+                        <label class="form-check-label" for="inputEmailContact">Email</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="appointmentRadio" id="inputCallContact"
+                               value="Phone Call">
+                        <label class="form-check-label" for="inputCallContact">Phone Call</label>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputPeople"><br>How many people live in your home?<br>(Ages?)</label>
+                        <input type="text" class="form-control" name="people" id="inputPeople">
+                    </div>
+                    Do you have any other pets?<br><br>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="petsRadio" id="inputYes" value="Yes">
+                        <label class="form-check-label" for="inputYes">Yes</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="petsRadio" id="inputNo" value="No" checked>
+                        <label class="form-check-label" for="inputNo">No</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputHowMany"><br>How long are you typically away at work?</label>
+                        <input type="text" class="form-control" id="inputHowMany" name="work">
+                    </div>
+                    Which of these describes your lifestyle?<br><br>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="lifestyleRadio" id="inputHighlyActive"
+                               value="Highly Active" checked>
+                        <label class="form-check-label" for="inputHighlyActive">Highly Active</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="lifestyleRadio" id="inputActive"
+                               value="Active">
+                        <label class="form-check-label" for="inputActive">Active</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="lifestyleRadio" id="inputLightlyActive"
+                               value="Lightly Active" >
+                        <label class="form-check-label" for="inputLightlyActive">Lightly Active</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="lifestyleRadio" id="inputSedentary"
+                               value="Sedentary">
+                        <label class="form-check-label" for="inputSedentary">Sedentary</label>
+                    </div>
+                    <br>
+                    <button type="button" class="btn btn-primary" id="submitFormBtn" value="Submit">Submit</button>
+                    <br>
+                </form>
+            </div>
+
+        </main>
+
+</div>
+
+<div class="formSubmitPage">
+    <div class="header">
+        <h1>Buddies n' Pals</h1>
+        <h2>Animal Adoption Center</h2>
+    </div>
+
+    <main>
+
+        <div class="formContent">
+            <br><br>
+            <h2>Thank you for showing interest!</h2><br>
+            <h3>We'll get back to you in 3-5 days to set up an appointment!</h3><br><br>
+            <strong>Name:</strong>
+            <div class="name"></div>
+            <strong>Phone:</strong>
+            <div class="phone"></div>
+            <strong>Email:</strong>
+            <div class="email"></div>
+            <strong>Preferred contact:</strong>
+            <div class="appt"></div>
+            <strong>Any pets?:</strong>
+            <div class="howMany"></div>
+            <strong>Away for work:</strong>
+            <div class="work"></div>
+            <strong>Lifestyle:</strong>
+            <div class="lifestyle"></div>
+        </div>
+    </main>
+    <footer>
+        Updated: 12/6/2020
+        Sponsored by HAWS
+    </footer>
+</div>
+
+
+<div class="quiz">
+    <div class="header">
+        <h1>Buddies n' Pals</h1>
+        <h2>Animal Adoption Center</h2>
+    </div>
+
+    <main>
+        <form class="quizForm">
+            <h3>Personality Quiz</h3>
+            <h4>Who Will Be Your Next Best Friend?</h4>
+            <br>
+            <br>
+            Do you like to snuggle?
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="snuggle" id="snuggle1" value="A">
+                <label class="form-check-label" for="snuggle1">Yes</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="snuggle" id="snuggle2" value="B">
+                <label class="form-check-label" for="snuggle2">No</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="snuggle" id="snuggle3" value="C">
+                <label class="form-check-label" for="snuggle3">Maybe</label>
+            </div>
+            <br>
+            <br>
+            Do you consider yourself to be aloof?
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="aloof" id="aloof1" value="A">
+                <label class="form-check-label" for="aloof1">Yes</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="aloof" id="aloof2" value="B">
+                <label class="form-check-label" for="aloof2">No</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="aloof" id="aloof3" value="C">
+                <label class="form-check-label" for="aloof3">Maybe</label>
+            </div>
+            <br>
+            <br>
+            Do you find static electricity fun?
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="static" id="static1" value="A">
+                <label class="form-check-label" for="static1">Yes</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="static" id="static2" value="B">
+                <label class="form-check-label" for="static2">No</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="static" id="static3" value="C">
+                <label class="form-check-label" for="static3">Maybe</label>
+            </div>
+            <br>
+            <br>
+            Do you like to party/go to social events?
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="social" id="social1" value="A">
+                <label class="form-check-label" for="social1">Yes</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="social" id="social2" value="B">
+                <label class="form-check-label" for="social2">No</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="social" id="social3" value="C">
+                <label class="form-check-label" for="social3">Maybe</label>
+            </div>
+            <br>
+            <br>
+            Do you prefer to:
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="activity" id="activity1" value="A">
+                <label class="form-check-label" for="activity1">Attend a Concert</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="activity" id="activity2" value="B">
+                <label class="form-check-label" for="activity2">Go to a museum</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="activity" id="activity3" value="C">
+                <label class="form-check-label" for="activity3">Read a book</label>
+            </div>
+            <br>
+            <br>
+            Which pizza topping do you prefer?
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="pizzaTopping" id="pizzaTopping1" value="A">
+                <label class="form-check-label" for="pizzaTopping1">Pineapple</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="pizzaTopping" id="pizzaTopping2" value="B">
+                <label class="form-check-label" for="pizzaTopping2">Pepperoni</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="pizzaTopping" id="pizzaTopping3" value="C">
+                <label class="form-check-label" for="pizzaTopping3">Peppers</label>
+            </div>
+            <br>
+            <br>
+            If you could have any superpower, what would it be?:
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="superPower" id="superPower1" value="A">
+                <label class="form-check-label" for="superPower1">Flight</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="superPower" id="superPower2" value="B">
+                <label class="form-check-label" for="superPower2">Invisibility</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="superPower" id="superPower3" value="C">
+                <label class="form-check-label" for="superPower3">Telepathy</label>
+            </div>
+            <br>
+            <br>
+            How many things?
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="things" id="things1" value="A">
+                <label class="form-check-label" for="things1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="things" id="things2" value="B">
+                <label class="form-check-label" for="things2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="things" id="things3" value="C">
+                <label class="form-check-label" for="things3">3</label>
+            </div>
+            <br><br>
+            <button type="submit" class="quizSubmit">Submit</button>
+        </form>
+        <div class="modals">
+            <div class="dogModal">
+                Wow! You're quite the social butterfly! Maybe look into a pupper for your new best friend, seems like
+                you two would get along :)
+            </div>
+            <div class="catModal">
+                Seems like you're someone who likes to live life on their terms; A furry cat friend might be the best
+                choice for you!
+            </div>
+            <div class="otherModal">
+                Unsure of where life is taking you? You should look at adopting one of our many small mammals or
+                reptiles!
+            </div>
+        </div>
+
+    </main>
+    <footer>
+        Updated: 12/6/2020
+        Sponsored by HAWS
+    </footer>
+
+</div>
+
+
+</body>
+</html>
